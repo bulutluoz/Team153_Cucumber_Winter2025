@@ -30,4 +30,22 @@ public class TestotomasyonuStepdefinitions {
     public void sayfayi_kapatir() {
         Driver.quitDriver();
     }
+
+    @When("arama kutusuna dress yazip aratir")
+    public void aramaKutusunaDressYazipAratir() {
+        testotomasyonuPage.aramaKutusu.sendKeys("dress" + Keys.ENTER);
+    }
+
+    @When("arama kutusuna Java yazip aratir")
+    public void arama_Kutusuna_Java_Yazip_Aratir() {
+        testotomasyonuPage.aramaKutusu.sendKeys("Java" + Keys.ENTER);
+    }
+
+    @Then("arama sonucunda urun bulunamadigini test eder")
+    public void aramaSonucundaUrunBulunamadiginiTestEder() {
+        String expectedSonucYazisi = ConfigReader.getProperty("toBulunamadiYazisi");
+        String actualSonucYazisi = testotomasyonuPage.aramaSonucYaziElementi.getText();
+
+        Assertions.assertEquals(expectedSonucYazisi,actualSonucYazisi);
+    }
 }
