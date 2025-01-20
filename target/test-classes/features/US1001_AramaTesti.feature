@@ -14,7 +14,7 @@
       Then arama sonucunda urun bulunabildigini test eder
       And sayfayi kapatir
 
-      
+
     Scenario: TC03 kullanici Java arattiginda sonuc bulamamali
       Given kullanici testotomasyonu anasayfaya gider
       When arama kutusuna Java yazip aratir

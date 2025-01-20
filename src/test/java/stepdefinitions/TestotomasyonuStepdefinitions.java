@@ -10,6 +10,7 @@ import utilities.Driver;
 public class TestotomasyonuStepdefinitions {
 
     TestotomasyonuPage testotomasyonuPage = new TestotomasyonuPage();
+    String urunSayfasindaKaydedilenUrunIsmi;
 
     @Given("kullanici testotomasyonu anasayfaya gider")
     public void kullanici_testotomasyonu_anasayfaya_gider() {
@@ -47,5 +48,54 @@ public class TestotomasyonuStepdefinitions {
         String actualSonucYazisi = testotomasyonuPage.aramaSonucYaziElementi.getText();
 
         Assertions.assertEquals(expectedSonucYazisi,actualSonucYazisi);
+    }
+
+    @When("arama kutusuna belirlenen aranacak kelimeyi yazip aratir")
+    public void arama_kutusuna_belirlenen_aranacak_kelimeyi_yazip_aratir() {
+        testotomasyonuPage.aramaKutusu.sendKeys(ConfigReader.getProperty("toAranacakKelime") + Keys.ENTER);
+    }
+
+    @Then("aratma sonuclarindan ilk urunu tiklar")
+    public void aratma_sonuclarindan_ilk_urunu_tiklar() {
+        testotomasyonuPage.bulunanUrunElementleriList
+                            .get(0)
+                            .click();
+    }
+
+    @Then("acilan urun sayfasindaki urun isminde case sensitive olmadan aranacak kelime bulundugunu test eder")
+    public void acilan_urun_sayfasindaki_urun_isminde_case_sensitive_olmadan_aranacak_kelime_bulundugunu_test_eder() {
+        String expectedUrunIsimIcerigi = ConfigReader.getProperty("toAranacakKelime");
+        String actualUrunIsmi = testotomasyonuPage.urunSayfasindakiIsimElementi
+                                                    .getText()
+                                                    .toLowerCase();
+
+        Assertions.assertTrue(actualUrunIsmi.contains(expectedUrunIsimIcerigi));
+    }
+
+    @Then("acilan urun sayfasindaki urun ismini kaydeder")
+    public void acilan_urun_sayfasindaki_urun_ismini_kaydeder() {
+        urunSayfasindaKaydedilenUrunIsmi = testotomasyonuPage.urunSayfasindakiIsimElementi.getText();
+    }
+
+    @When("urunu sepete ekler")
+    public void urunu_sepete_ekler() {
+        testotomasyonuPage.urunSayfasindakiSepeteEkleButonu.click();
+
+    }
+
+    @When("your cart linkine tiklar")
+    public void your_cart_linkine_tiklar() {
+
+        testotomasyonuPage.urunSayfasindakiYourCartButonu.click();
+
+    }
+
+    @Then("sepetteki urun ismi ile daha once kaydettigi ismin ayni oldugunu test eder")
+    public void sepetteki_urun_ismi_ile_daha_once_kaydettigi_ismin_ayni_oldugunu_test_eder() {
+
+        String sepettekiActualUrunIsmi = testotomasyonuPage.yourCartSayfasindakiUrunIsmi.getText();
+
+        Assertions.assertEquals(urunSayfasindaKaydedilenUrunIsmi,sepettekiActualUrunIsmi);
+
     }
 }
