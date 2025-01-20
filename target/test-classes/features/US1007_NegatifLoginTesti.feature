@@ -2,7 +2,6 @@
   Feature: US1007 Kullanici yanlis bilgilerle giris yapamaz
 
 
-
     Scenario: TC11 Kullanici gecersiz email ve gecerli password ile giris yapamamali
 
       Given kullanici testotomasyonu anasayfaya gider
@@ -24,7 +23,7 @@
       And basarili olarak giris yapilamadigini test eder
       And sayfayi kapatir
 
-      
+
     Scenario: TC13 Kullanici gecersiz email ve gecersiz password ile giris yapamamali
       Given kullanici testotomasyonu anasayfaya gider
       When anasayfadaki account linkine tiklar
