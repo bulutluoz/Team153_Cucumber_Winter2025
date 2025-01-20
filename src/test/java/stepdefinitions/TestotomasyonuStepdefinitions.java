@@ -169,4 +169,9 @@ public class TestotomasyonuStepdefinitions {
     public void logoutButonunaBasar() {
         testotomasyonuPage.logoutButonu.click();
     }
+
+    @Then("basarili olarak giris yapilamadigini test eder")
+    public void basariliOlarakGirisYapilamadiginiTestEder() {
+        Assertions.assertTrue(testotomasyonuPage.loginSayfasiEmailKutusu.isDisplayed());
+    }
 }
