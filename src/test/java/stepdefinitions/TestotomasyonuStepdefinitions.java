@@ -98,4 +98,15 @@ public class TestotomasyonuStepdefinitions {
         Assertions.assertEquals(urunSayfasindaKaydedilenUrunIsmi,sepettekiActualUrunIsmi);
 
     }
+
+    @Then("sepetteki urun ismi ile daha once kaydettigi ismin case sensitive olmadan ayni oldugunu test eder")
+    public void sepettekiUrunIsmiIleDahaOnceKaydettigiIsminCaseSensitiveOlmadanAyniOldugunuTestEder() {
+
+        String expectedUrunIsmi = urunSayfasindaKaydedilenUrunIsmi.toLowerCase();
+        String actualUrunIsmi = testotomasyonuPage.yourCartSayfasindakiUrunIsmi
+                                                    .getText()
+                                                    .toLowerCase();
+
+        Assertions.assertEquals(expectedUrunIsmi,actualUrunIsmi);
+    }
 }
