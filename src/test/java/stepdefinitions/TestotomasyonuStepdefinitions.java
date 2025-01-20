@@ -6,6 +6,7 @@ import org.openqa.selenium.Keys;
 import pages.TestotomasyonuPage;
 import utilities.ConfigReader;
 import utilities.Driver;
+import utilities.ReusableMethods;
 
 public class TestotomasyonuStepdefinitions {
 
@@ -108,5 +109,27 @@ public class TestotomasyonuStepdefinitions {
                                                     .toLowerCase();
 
         Assertions.assertEquals(expectedUrunIsmi,actualUrunIsmi);
+    }
+
+    @When("arama kutusuna {string} yazip aratir")
+    public void aramaKutusunaYazipAratir(String aranacakUrunIsmi) {
+        testotomasyonuPage.aramaKutusu.sendKeys(aranacakUrunIsmi + Keys.ENTER);
+    }
+
+    @Then("acilan urun sayfasindaki urun isminde case sensitive olmadan {string} bulundugunu test eder")
+    public void acilanUrunSayfasindakiUrunIsmindeCaseSensitiveOlmadanBulundugunuTestEder(String aratilanUrunIsmi) {
+
+        String actualUrunIsmi = testotomasyonuPage.urunSayfasindakiIsimElementi
+                                                    .getText()
+                                                    .toLowerCase();
+
+        Assertions.assertTrue(actualUrunIsmi.contains(aratilanUrunIsmi));
+
+    }
+
+    @And("senkronizasyon icin {int} saniye bekler")
+    public void senkronizasyonIcinSaniyeBekler(int beklemeSuresi) {
+
+        ReusableMethods.bekle(beklemeSuresi);
     }
 }

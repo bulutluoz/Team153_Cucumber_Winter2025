@@ -19,7 +19,7 @@
 
 
     Scenario: TC08 kullanici Java arattiginda sonuc bulamamali
-      
+
       When arama kutusuna Java yazip aratir
       Then arama sonucunda urun bulunamadigini test eder
       And sayfayi kapatir
