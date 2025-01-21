@@ -1,6 +1,7 @@
 
   Feature: US1009 Saucedemo alisveris sepeti testi
 
+    @wip
     Scenario: TC15 Kullanici sepete dogru urun eklendigini test edebilmeli
 
       Given kullanici "saucedemoUrl" anasayfaya gider
