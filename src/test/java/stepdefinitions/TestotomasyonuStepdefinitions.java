@@ -186,6 +186,22 @@ public class TestotomasyonuStepdefinitions {
     }
 
 
+    @Then("arama sonucunda {string} veya daha fazla urun bulunabildigini test eder")
+    public void aramaSonucundaVeyaDahaFazlaUrunBulunabildiginiTestEder(String belirtilenMiktarStr) {
+
+        int belirtilenMiktar = Integer.parseInt(belirtilenMiktarStr);
+
+        String aramaSonucYazisi = testotomasyonuPage.aramaSonucYaziElementi.getText();
+        // "3 Products Found"
+
+        aramaSonucYazisi = aramaSonucYazisi.replaceAll("\\D",""); // 3
+
+        int actualBulunanUrunSayisi = Integer.parseInt(aramaSonucYazisi);
+
+
+        Assertions.assertTrue(actualBulunanUrunSayisi >= belirtilenMiktar);
+
+    }
 
 
 }
