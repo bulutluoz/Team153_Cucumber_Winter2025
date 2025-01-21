@@ -1,7 +1,7 @@
 
   Feature: US1012 verilen gecersiz bilgilerle giris yapilamaz
 
-    @wip
+
     Scenario Outline: TC18 Kullanici yanlis bilgilerle giris yapamamali
 
       Given kullanici "toUrl" anasayfaya gider
