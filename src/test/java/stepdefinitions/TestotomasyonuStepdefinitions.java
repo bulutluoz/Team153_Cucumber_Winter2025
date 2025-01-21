@@ -174,4 +174,18 @@ public class TestotomasyonuStepdefinitions {
     public void basariliOlarakGirisYapilamadiginiTestEder() {
         Assertions.assertTrue(testotomasyonuPage.loginSayfasiEmailKutusu.isDisplayed());
     }
+
+    @Then("email kutusuna listede verilen {string} degerini girer")
+    public void emailKutusunaListedeVerilenDegeriniGirer(String verilenListedekiEmail) {
+        testotomasyonuPage.loginSayfasiEmailKutusu.sendKeys(verilenListedekiEmail);
+    }
+
+    @And("password kutusuna listede verilen {string} degerini girer")
+    public void passwordKutusunaListedeVerilenDegeriniGirer(String verilenListedekiPassword) {
+        testotomasyonuPage.loginSayfasiPasswordKutusu.sendKeys(verilenListedekiPassword);
+    }
+
+
+
+
 }
