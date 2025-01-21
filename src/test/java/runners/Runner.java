@@ -9,9 +9,11 @@ import org.junit.platform.suite.api.Suite;
     @Suite
     @IncludeEngines("cucumber")
     @SelectClasspathResource("src/test/java")
+
     @ConfigurationParameter(key = Constants.FEATURES_PROPERTY_NAME,value = "src/test/resources/features")
     @ConfigurationParameter(key = Constants.GLUE_PROPERTY_NAME,value = "stepdefinitions")
     @ConfigurationParameter(key = Constants.FILTER_TAGS_PROPERTY_NAME,value = "@wip")
+
     @ConfigurationParameter(key = Constants.EXECUTION_DRY_RUN_PROPERTY_NAME,value = "false")
 
     //@ConfigurationParameter(key = Constants.PLUGIN_PROPERTY_NAME,value = "pretty, html:target/cucumber-report/HtmlReport.html")
@@ -53,6 +55,11 @@ import org.junit.platform.suite.api.Suite;
                Runner'i her calistirdigimizda, tum feature'lari degil
                belirledigimiz bir tag'a sahip olan feature'lari calistirmak icin kullanilir
 
+            Yapilan bu 3 ayar sayesinde
+            Cucumber FEATURES_PROPERTY_NAME olarak verilen klasordeki feature dosyalarindan
+            FILTER_TAGS_PROPERTY_NAME de verilen tag'a sahip olanlari
+            GLUE_PROPERTY_NAME de verilen dosya yolu altindaki java stepdefinitions kodlarini
+            kullanarak calistirir.
 
          */
     }
