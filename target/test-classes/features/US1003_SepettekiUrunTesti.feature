@@ -1,6 +1,7 @@
 
   Feature: US1003 Kullanici sepete dogru urun ekleyebilmeli
 
+    @smoke
     Scenario: TC05 Kullanici sepete ekledigi urunun dogru sekilde sepete eklendigini kontrol edebilmeli
 
       Given kullanici testotomasyonu anasayfaya gider

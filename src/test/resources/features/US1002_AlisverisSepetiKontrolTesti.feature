@@ -11,5 +11,6 @@
       And acilan urun sayfasindaki urun ismini kaydeder
       When urunu sepete ekler
       And your cart linkine tiklar
+      And senkronizasyon icin 1 saniye bekler
       Then sepetteki urun ismi ile daha once kaydettigi ismin ayni oldugunu test eder
       And sayfayi kapatir

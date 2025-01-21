@@ -1,7 +1,7 @@
 
   Feature: US1006 kullanici gecerli bilgilerle giris yapar
 
-
+    @smoke @kullaniciE2E @saticiE2E
     Scenario: TC10 Kullanici configuration dosyasindaki gecerli datalarla giris yapabilmeli
 
       Given kullanici testotomasyonu anasayfaya gider

@@ -61,5 +61,12 @@ import org.junit.platform.suite.api.Suite;
             GLUE_PROPERTY_NAME de verilen dosya yolu altindaki java stepdefinitions kodlarini
             kullanarak calistirir.
 
+            EXECUTION_DRY_RUN_PROPERTY_NAME,value = "false"
+            EGER bu parametre'nin degeri true yapilirsa
+            Kodlari calistirmak yerine
+            SADECE eksik adim kontrolu yapar
+            eksik adim varsa, o step'lerin java method'larini olusturur
+            eksik adim yoksa, bunu vurgulamak icin, kodlari calistirmadan "test passed" der
+
          */
     }

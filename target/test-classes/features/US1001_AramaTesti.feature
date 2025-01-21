@@ -1,4 +1,5 @@
 
+  @smoke
   Feature: US1001 Kullanici testotomasyonu sayfasinda arama yapar
 
     Scenario: TC01 kullanici phone arattiginda sonuc bulabilmeli

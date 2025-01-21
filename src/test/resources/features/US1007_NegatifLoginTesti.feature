@@ -13,7 +13,7 @@
       And senkronizasyon icin 3 saniye bekler
       And sayfayi kapatir
 
-
+    @smoke
     Scenario: TC12 Kullanici gecerli email ve gecersiz password ile giris yapamamali
       Given kullanici testotomasyonu anasayfaya gider
       When anasayfadaki account linkine tiklar
