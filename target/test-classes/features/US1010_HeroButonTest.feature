@@ -11,4 +11,4 @@
       Then Delete tusuna basar
       And Add Remove Elements yazisinin gorunur oldugunu test eder
       And senkronizasyon icin 2 saniye bekler
-      And sayfayi kapatir
+

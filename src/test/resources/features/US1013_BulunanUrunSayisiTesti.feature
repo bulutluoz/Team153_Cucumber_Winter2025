@@ -8,7 +8,7 @@
       Given kullanici "toUrl" anasayfaya gider
       When arama kutusuna "<aranacakKelime>" yazip aratir
       Then arama sonucunda "<belirtilenMiktar>" veya daha fazla urun bulunabildigini test eder
-      And sayfayi kapatir
+
 
 
 

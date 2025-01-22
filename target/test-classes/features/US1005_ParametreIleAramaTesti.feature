@@ -9,4 +9,4 @@
       And aratma sonuclarindan ilk urunu tiklar
       And senkronizasyon icin 2 saniye bekler
       Then acilan urun sayfasindaki urun isminde case sensitive olmadan "apple" bulundugunu test eder
-      And sayfayi kapatir
+

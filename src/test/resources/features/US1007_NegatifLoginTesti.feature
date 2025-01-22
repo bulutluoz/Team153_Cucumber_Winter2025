@@ -11,7 +11,7 @@
       And login sayfasindaki signIn butonuna basar
       Then basarili olarak giris yapilamadigini test eder
       And senkronizasyon icin 3 saniye bekler
-      And sayfayi kapatir
+
 
     @smoke
     Scenario: TC12 Kullanici gecerli email ve gecersiz password ile giris yapamamali
@@ -21,7 +21,7 @@
       And password kutusuna configuration dosyasindaki "toGecersizPassword" degerini girer
       Then login sayfasindaki signIn butonuna basar
       And basarili olarak giris yapilamadigini test eder
-      And sayfayi kapatir
+
 
 
     Scenario: TC13 Kullanici gecersiz email ve gecersiz password ile giris yapamamali
@@ -31,4 +31,4 @@
       And password kutusuna configuration dosyasindaki "toGecersizPassword" degerini girer
       Then login sayfasindaki signIn butonuna basar
       And basarili olarak giris yapilamadigini test eder
-      And sayfayi kapatir
+

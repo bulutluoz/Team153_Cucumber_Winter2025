@@ -10,7 +10,7 @@
       And password kutusuna listede verilen "<verilenPassword>" degerini girer
       And login sayfasindaki signIn butonuna basar
       Then basarili olarak giris yapilamadigini test eder
-      And sayfayi kapatir
+
 
 
 

@@ -12,6 +12,6 @@
       Then senkronizasyon icin 5 saniye bekler
       And facebook kayit ol tusuna basar
       Then senkronizasyon icin 12 saniye bekler
-      And sayfayi kapatir
+
 
   

@@ -16,4 +16,3 @@
       And senkronizasyon icin 2 saniye bekler
       And saucedemo sectigi urunun basarili olarak sepete eklendigini test eder
       And senkronizasyon icin 2 saniye bekler
-      And sayfayi kapatir

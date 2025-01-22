@@ -11,5 +11,5 @@
       And urunu sepete ekler
       When your cart linkine tiklar
       Then sepetteki urun ismi ile daha once kaydettigi ismin case sensitive olmadan ayni oldugunu test eder
-      And sayfayi kapatir
+
 
