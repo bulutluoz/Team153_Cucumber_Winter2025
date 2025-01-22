@@ -16,7 +16,7 @@ import org.junit.platform.suite.api.Suite;
 
     @ConfigurationParameter(key = Constants.EXECUTION_DRY_RUN_PROPERTY_NAME,value = "false")
 
-    //@ConfigurationParameter(key = Constants.PLUGIN_PROPERTY_NAME,value = "pretty, html:target/cucumber-report/HtmlReport.html")
+    @ConfigurationParameter(key = Constants.PLUGIN_PROPERTY_NAME,value = "pretty, html:target/cucumber-report/HtmlReport.html")
     //@ConfigurationParameter(key = Constants.PLUGIN_PROPERTY_NAME,value = "pretty, json:target/json-reports/cucumberRapor.json")
     //@ConfigurationParameter(key = Constants.PLUGIN_PROPERTY_NAME,value = "pretty, junit:target/xml-report/cucumber.xml")
 
@@ -67,6 +67,27 @@ import org.junit.platform.suite.api.Suite;
             SADECE eksik adim kontrolu yapar
             eksik adim varsa, o step'lerin java method'larini olusturur
             eksik adim yoksa, bunu vurgulamak icin, kodlari calistirmadan "test passed" der
+
+
+            PLUGIN_PROPERTY_NAME,value = "pretty, html:target/cucumber-report/HtmlReport.html
+            HTML raporlar ureten plugin'i calistirir
+            ANCCCAAAAK bu satir Runner class'inda oldugu icin
+            Runner ile calistirilan feature'lar icin html rapor olusturur
+            Feature veya Scenario yanindaki yesil tus ile calistirilirsa rapor olusturmaz
+
+            dosya yolu olarak target/cucumber-report/HtmlReport.html girildiginden
+            bir degisiklik yapmazsak her seferinde ayni dosyanin uzerine kaydeder
+            ozel olarak saklamak istedigimiz raporlar olursa
+            HtmlReport yerine istenen isim yazilabilir
+            Eger Farkli bir klasor altinda raporlari kaydetmek isterseniz
+            target/cucumber-report/  kismi degistirilebilir
+
+            Diger rapaorlar da PLUGIN_PROPERTY_NAME olarak tanimlandigindan
+            Html, json veya xml raporlarindan hangisini istiyorsak
+            o satir yorumdan cikarilmali,
+            diger rapor satirlari yorum yapilmalidir
+
+
 
          */
     }

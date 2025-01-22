@@ -1,6 +1,7 @@
 
   Feature: US1014 excelde verilen urunler aratilir ve sonuclar kaydedilir
 
+    @wip
     Scenario Outline: TC20 kullanici excelde verilen urunlerin
                            belirlenen miktar veya daha fazla bulundugunu test edebilmeli
                            ve bulunan sonuc sayisini tarih ile kaydeder
@@ -10,7 +11,7 @@
       When kullanici "toUrl" anasayfaya gider
       And arama kutusuna kaydedilen urun ismini yazip aratir
       Then arama sonucunda minumum sonuc sayisi veya daha fazla urun bulunabildigini test eder
-      And bulunan sonuc sayisini "<satir>" daki 4.sutuna, tarihi de 5.sutuna yazar
+      And bulunan sonuc sayisini "<satir>" daki 6.sutuna, tarihi de 7.sutuna yazar
       And sayfayi kapatir
 
       Examples:
