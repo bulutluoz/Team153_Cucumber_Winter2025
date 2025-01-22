@@ -12,11 +12,11 @@ import org.junit.platform.suite.api.Suite;
 
     @ConfigurationParameter(key = Constants.FEATURES_PROPERTY_NAME,value = "src/test/resources/features")
     @ConfigurationParameter(key = Constants.GLUE_PROPERTY_NAME,value = "stepdefinitions")
-    @ConfigurationParameter(key = Constants.FILTER_TAGS_PROPERTY_NAME,value = "@wip")
+    @ConfigurationParameter(key = Constants.FILTER_TAGS_PROPERTY_NAME,value = "@rapor")
 
     @ConfigurationParameter(key = Constants.EXECUTION_DRY_RUN_PROPERTY_NAME,value = "false")
 
-    @ConfigurationParameter(key = Constants.PLUGIN_PROPERTY_NAME,value = "pretty, html:target/cucumber-report/HtmlReport.html")
+    //@ConfigurationParameter(key = Constants.PLUGIN_PROPERTY_NAME,value = "pretty, html:target/cucumber-report/HtmlReport.html")
     //@ConfigurationParameter(key = Constants.PLUGIN_PROPERTY_NAME,value = "pretty, json:target/json-reports/cucumberRapor.json")
     //@ConfigurationParameter(key = Constants.PLUGIN_PROPERTY_NAME,value = "pretty, junit:target/xml-report/cucumber.xml")
 
@@ -82,10 +82,18 @@ import org.junit.platform.suite.api.Suite;
             Eger Farkli bir klasor altinda raporlari kaydetmek isterseniz
             target/cucumber-report/  kismi degistirilebilir
 
-            Diger rapaorlar da PLUGIN_PROPERTY_NAME olarak tanimlandigindan
+            Diger raporlar da PLUGIN_PROPERTY_NAME olarak tanimlandigindan
             Html, json veya xml raporlarindan hangisini istiyorsak
             o satir yorumdan cikarilmali,
             diger rapor satirlari yorum yapilmalidir
+
+            Diger json ve xml raporlari
+            gorsel acidan bizim icin begenilmeyebilir
+            ANCAAKKK eger her hangi bir durumda
+            raporumuzdaki data'lar bizden istenirse
+            json veya xml olarak istenebilir
+            biz de bu raporlari olusturup
+            isteyen kislere yollayabiliriz
 
 
 

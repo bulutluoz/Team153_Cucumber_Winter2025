@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+
+<testsuite name="Cucumber" time="11.823" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="US1009 Saucedemo alisveris sepeti testi" name="TC15 Kullanici sepete dogru urun eklendigini test edebilmeli" time="11.71">
+<system-out><![CDATA[
+Given kullanici "saucedemoUrl" anasayfaya gider.............................passed
+And senkronizasyon icin 2 saniye bekler.....................................passed
+Then saucedemo username kutusuna "standard_user" yazar......................passed
+And saucedemo password kutusuna "secret_sauce" yazar........................passed
+And senkronizasyon icin 2 saniye bekler.....................................passed
+Then saucedemo login tusuna basar...........................................passed
+And saucedemo ilk urunun ismini kaydeder ve bu urunun sayfasina gider.......passed
+When saucedemo add to Cart butonuna basar...................................passed
+Then saucedemo alisveris sepetine tiklar....................................passed
+And senkronizasyon icin 2 saniye bekler.....................................passed
+And saucedemo sectigi urunun basarili olarak sepete eklendigini test eder...passed
+And senkronizasyon icin 2 saniye bekler.....................................passed
+]]></system-out>
+</testcase>
+</testsuite>
