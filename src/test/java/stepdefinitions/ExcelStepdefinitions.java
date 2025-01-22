@@ -10,7 +10,10 @@ import pages.TestotomasyonuPage;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class ExcelStepdefinitions {
 
@@ -18,14 +21,17 @@ public class ExcelStepdefinitions {
     String satirdakiUrunIsmi;
     double satirdakiMinimumSonucSayisi;
     int bulunanSonucSayisi;
+    String excelDosyaYolu;
+    Workbook workbook;
+    FileInputStream fileInputStream;
     TestotomasyonuPage testotomasyonuPage = new TestotomasyonuPage();
 
 
     @Given("kullanici urunListesi excel'indeki Sheet1 e gider")
     public void kullanici_urun_listesi_excel_indeki_sheet1_e_gider() throws IOException {
-        String excelDosyaYolu = "src/test/resources/urunListesi.xlsx";
-        FileInputStream fileInputStream = new FileInputStream(excelDosyaYolu);
-        Workbook workbook = WorkbookFactory.create(fileInputStream);
+        excelDosyaYolu = "src/test/resources/urunListesi.xlsx";
+        fileInputStream = new FileInputStream(excelDosyaYolu);
+        workbook = WorkbookFactory.create(fileInputStream);
         sheet1 = workbook.getSheet("Sheet1");
     }
 
@@ -58,7 +64,7 @@ public class ExcelStepdefinitions {
         String aramaSonucYazisi = testotomasyonuPage.aramaSonucYaziElementi.getText();
         // "3 Products Found"
 
-        aramaSonucYazisi = aramaSonucYazisi.replaceAll("\\D",""); // 3
+        aramaSonucYazisi = aramaSonucYazisi.replaceAll("\\D",""); // "3"
 
         bulunanSonucSayisi = Integer.parseInt(aramaSonucYazisi);
 
@@ -68,8 +74,31 @@ public class ExcelStepdefinitions {
     }
 
     @Then("bulunan sonuc sayisini {string} daki {int}.sutuna, tarihi de {int}.sutuna yazar")
-    public void bulunan_sonuc_sayisini_daki_sutuna_tarihi_de_sutuna_yazar(String string, Integer int1, Integer int2) {
+    public void bulunan_sonuc_sayisini_daki_sutuna_tarihi_de_sutuna_yazar(String satirNoStr, Integer sonucSutunNo, Integer tarihSutunNo) throws IOException {
 
+        int satirNo = Integer.parseInt(satirNoStr);
+
+        sheet1.getRow(satirNo-1)
+                .createCell(sonucSutunNo-1)
+                .setCellValue(bulunanSonucSayisi);
+
+        LocalDateTime localDateTime = LocalDateTime.now();
+        DateTimeFormatter format1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+        sheet1.getRow(satirNo-1)
+                .createCell(tarihSutunNo-1)
+                .setCellValue(localDateTime.format(format1));
+
+        // Normalde kaydetme islemini, tum satirlari bitirdikten sonra yapariz
+        // ancak burada herbir satir icin kod sifirdan calisacagi icin
+        // her satirda yapilan islemi kayit altina almaliyiz
+
+        FileOutputStream fileOutputStream = new FileOutputStream(excelDosyaYolu);
+        workbook.write(fileOutputStream);
+
+        fileOutputStream.close();
+        workbook.close();
+        fileInputStream.close();
 
     }
 
