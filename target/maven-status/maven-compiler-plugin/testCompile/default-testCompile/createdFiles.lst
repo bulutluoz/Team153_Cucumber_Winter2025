@@ -10,9 +10,11 @@ pages/FacebookPage.class
 utilities/ConfigReader.class
 stepdefinitions/Hooks.class
 stepdefinitions/ExcelStepdefinitions.class
+pages/DemoqaPage.class
 runners/ParalelRun2.class
 utilities/Driver.class
 pages/TestotomasyonuPage.class
 stepdefinitions/SauceDemoStepdefinitions.class
 stepdefinitions/TestotomasyonuStepdefinitions.class
+stepdefinitions/DemoqaStepdefinitions.class
 pages/WebUniversityPage.class
