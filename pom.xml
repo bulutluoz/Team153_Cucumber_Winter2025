@@ -118,7 +118,7 @@
                     <testFailureIgnore>true</testFailureIgnore>
                     <skipTests>false</skipTests>
                     <includes>
-                        <include>**/runners/*ParalelRun*.java</include>
+                        <include>**/runners/*Runner*.java</include>
                         <!-- runners package altinda
                              calismasini istedigimiz Runner'larin
                              isimlerindeki ortak bolumu yaziyoruz-->
@@ -132,7 +132,7 @@
                 <configuration>
                     <parallel>classes</parallel>
                     <forkMode>perthread</forkMode>
-                    <threadCount>2</threadCount> <!-- Ayni anda calisacak thread sayisi -->
+                    <threadCount>1</threadCount> <!-- Ayni anda calisacak thread sayisi -->
                     <reuseForks>false</reuseForks>
                     <argLine>-Duser.language=en</argLine>
                     <argLine>-Xmx1024m</argLine>
@@ -140,7 +140,7 @@
                     <argLine>-Dfile.encoding=UTF-8</argLine>
                     <useFile>false</useFile>
                     <includes>
-                        <include>**/runners/*ParalelRun*.java</include>
+                        <include>**/runners/*Runner*.java</include>
                         <!-- runners package altinda
                              calismasini istedigimiz Runner'larin
                              isimlerindeki ortak bolumu yaziyoruz-->

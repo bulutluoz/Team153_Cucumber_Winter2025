@@ -1,7 +1,7 @@
 
   Feature: US1005 Kullanici parametre olarak verilen urunu aratir
 
-    @paralel2
+    @paralel2 @deneme
     Scenario: TC09 Kullanici verilen her urunu tek step ile aratabilmeli
 
       Given kullanici testotomasyonu anasayfaya gider

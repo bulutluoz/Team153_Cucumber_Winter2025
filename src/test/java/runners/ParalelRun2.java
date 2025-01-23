@@ -21,4 +21,5 @@ import org.junit.platform.suite.api.Suite;
 //@ConfigurationParameter(key = Constants.PLUGIN_PROPERTY_NAME,value = "pretty, junit:target/xml-report/cucumber2.xml")
 
 public class ParalelRun2 {
+
 }
