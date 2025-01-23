@@ -1,7 +1,7 @@
 
   Feature: US1010 Kullanici butonlari kullanir
 
-
+    @paralel1
     Scenario: TC16 Kullanici butonlarin gorundugunu ve calistigini test eder
 
       Given kullanici "heroUrl" anasayfaya gider

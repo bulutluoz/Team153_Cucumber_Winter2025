@@ -1,4 +1,5 @@
 
+  @paralel2
   Feature: US1007 Kullanici yanlis bilgilerle giris yapamaz
 
 

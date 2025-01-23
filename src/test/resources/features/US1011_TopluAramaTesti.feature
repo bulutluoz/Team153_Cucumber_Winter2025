@@ -1,7 +1,7 @@
 
   Feature: US1011 kullanici liste olarak verilen urunleri aratir
 
-
+    @paralel2
     Scenario Outline: TC17 Verilen her bir urun bulunabilmeli
 
       Given kullanici "toUrl" anasayfaya gider
