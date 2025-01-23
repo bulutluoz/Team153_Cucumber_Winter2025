@@ -1,6 +1,6 @@
 
   Feature: US1015 Kullanici butonlari kullanir
-    @wip
+
     Scenario:TC21 Kullanici butonlarin calistirabilmeli
 
       Given kullanici "demoqaUrl" anasayfaya gider

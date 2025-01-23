@@ -23,7 +23,7 @@ public class DemoqaPage {
     @FindBy(xpath = "(//*[@class='header-wrapper'])[1]")
     public WebElement elementsMenusu;
 
-    @FindBy(xpath = "(//*[.='Dynamic Properties']")
+    @FindBy(xpath = "(//*[.='Dynamic Properties'])[2]")
     public WebElement DynamicPropertiesMenusu;
 
 

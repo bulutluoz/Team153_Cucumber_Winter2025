@@ -2,6 +2,8 @@ package stepdefinitions;
 
 import io.cucumber.java.en.*;
 import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.DemoqaPage;
@@ -12,6 +14,7 @@ import java.time.Duration;
 public class DemoqaStepdefinitions {
 
     DemoqaPage demoqaPage = new DemoqaPage();
+    WebElement visibleAfter5SecondsButonu;
 
     @Then("Alerts’e tiklar")
     public void alerts_e_tiklar() {
@@ -76,6 +79,25 @@ public class DemoqaStepdefinitions {
     public void willEnableSecondsButonununEnableOldugunuTestEder(int onemsiz) {
 
         Assertions.assertTrue(demoqaPage.willEnable5SecondsButonu.isEnabled());
+
+    }
+
+    @When("Visible after {int} seconds butonunun gorunur olmasini bekler")
+    public void visibleAfterSecondsButonununGorunurOlmasiniBekler(int arg0) {
+        // visible after 5 seconds butonu
+        // gorunur olmadigi icin locate edip, elementi kullanarak bekleyemeyiz
+        // bunun yerine locate islemi ve bekleme islemini birlikte yapiyoruz
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),Duration.ofSeconds(20));
+
+        visibleAfter5SecondsButonu =
+                wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("visibleAfter")));
+
+    }
+
+    @And("Visible after {int} seconds butonunun gorunur oldugunu test eder")
+    public void visibleAfterSecondsButonununGorunurOldugunuTestEder(int arg0) {
+
+        Assertions.assertTrue(visibleAfter5SecondsButonu.isDisplayed());
 
     }
 }
