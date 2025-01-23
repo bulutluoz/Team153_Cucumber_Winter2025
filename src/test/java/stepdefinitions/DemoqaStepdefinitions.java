@@ -52,4 +52,30 @@ public class DemoqaStepdefinitions {
     }
 
 
+    @Then("Elements menusunu acar")
+    public void elementsMenusunuAcar() {
+        demoqaPage.elementsMenusu.click();
+    }
+
+    @And("Dynamic Properties menusune gider")
+    public void dynamicPropertiesMenusuneGider() {
+        demoqaPage.DynamicPropertiesMenusu.click();
+
+    }
+
+    @When("Will enable {int} seconds butonunun enable olmasini bekler")
+    public void willEnableSecondsButonununEnableOlmasiniBekler(int onemsiz) {
+
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(20));
+
+        wait.until(ExpectedConditions.elementToBeClickable(demoqaPage.willEnable5SecondsButonu));
+
+    }
+
+    @And("Will enable {int} seconds butonunun enable oldugunu test eder")
+    public void willEnableSecondsButonununEnableOldugunuTestEder(int onemsiz) {
+
+        Assertions.assertTrue(demoqaPage.willEnable5SecondsButonu.isEnabled());
+
+    }
 }

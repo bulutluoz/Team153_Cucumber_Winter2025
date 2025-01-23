@@ -17,6 +17,14 @@ public class DemoqaPage {
     @FindBy(id = "timerAlertButton")
     public WebElement timerAlertButton;
 
+    @FindBy(id = "enableAfter")
+    public WebElement willEnable5SecondsButonu;
+
+    @FindBy(xpath = "(//*[@class='header-wrapper'])[1]")
+    public WebElement elementsMenusu;
+
+    @FindBy(xpath = "(//*[.='Dynamic Properties']")
+    public WebElement DynamicPropertiesMenusu;
 
 
 }
