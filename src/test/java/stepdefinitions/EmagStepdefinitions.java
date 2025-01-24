@@ -5,6 +5,10 @@ import io.cucumber.java.en.Then;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.openqa.selenium.Keys;
+import pages.EmagPage;
+import utilities.ConfigReader;
+import utilities.Driver;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -19,6 +23,7 @@ public class EmagStepdefinitions {
     Sheet sheet1;
     int ilkBosHucreIndexi;
     String excelDosyaYolu;
+    EmagPage emagPage = new EmagPage();
 
     @Then("urunListesi{int} excelindeki Sheet{int}'e gider")
     public void urunlistesiExcelindekiSheetEGider(int onemsiz, int onemsiz2) throws IOException {
@@ -58,12 +63,24 @@ public class EmagStepdefinitions {
     @And("her satirdaki urunu emag sitesinde aratir ve bulunan urunlerden ilkinin fiyatini kaydedilen index'deki sutuna yazar")
     public void herSatirdakiUrunuEmagSitesindeAratirVeBulunanUrunlerdenIlkininFiyatiniKaydedilenIndexDekiSutunaYazar() throws IOException {
 
+        int sonSatirIndexi = sheet1.getLastRowNum();
 
+        for (int i = 1; i <= sonSatirIndexi ; i++) {
 
+            String satirdakiUrunIsmi = sheet1.getRow(i)
+                                             .getCell(0)
+                                             .getStringCellValue();
 
+            Driver.getDriver().get(ConfigReader.getProperty("emagUrl"));
+            emagPage.aramaKutusu.sendKeys(satirdakiUrunIsmi + Keys.ENTER);
 
+            String ilkUrunFiyati = emagPage.ilkUrunFiyatElementi.getText();
 
+            sheet1.getRow(i)
+                    .createCell(ilkBosHucreIndexi)
+                    .setCellValue(ilkUrunFiyati);
 
+        }
 
 
         FileOutputStream fileOutputStream = new FileOutputStream(excelDosyaYolu);
