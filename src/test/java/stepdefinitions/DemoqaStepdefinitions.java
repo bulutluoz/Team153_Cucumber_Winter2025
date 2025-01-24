@@ -100,4 +100,23 @@ public class DemoqaStepdefinitions {
         Assertions.assertTrue(visibleAfter5SecondsButonu.isDisplayed());
 
     }
+
+    @When("Color change butonunun renginin degismesini bekler")
+    public void colorChangeButonununRengininDegismesiniBekler() {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),Duration.ofSeconds(20));
+
+        wait.until(ExpectedConditions.attributeToBe(demoqaPage.colorChangeButonu,"class","mt-4 text-danger btn btn-primary"));
+
+    }
+
+    @And("Color change butonunun renginin degistigini test eder")
+    public void colorChangeButonununRengininDegistiginiTestEder() {
+
+        String expectedClassAtributeDegeri = "mt-4 text-danger btn btn-primary";
+
+        String actualClassAttributeDegeri = demoqaPage.colorChangeButonu.getAttribute("Class");
+
+        Assertions.assertEquals(expectedClassAtributeDegeri,actualClassAttributeDegeri);
+
+    }
 }

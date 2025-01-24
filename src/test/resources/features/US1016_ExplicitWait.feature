@@ -23,6 +23,8 @@
     And Visible after 5 seconds butonunun gorunur oldugunu test eder
 
 
+
+
     Scenario: TC24 Kullanici buton renk degistirinceye kadar bekleyip
                    rengin degistigini test edebilmeli
 

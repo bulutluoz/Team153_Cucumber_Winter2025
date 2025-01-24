@@ -26,5 +26,7 @@ public class DemoqaPage {
     @FindBy(xpath = "(//*[.='Dynamic Properties'])[2]")
     public WebElement DynamicPropertiesMenusu;
 
+    @FindBy(xpath = "//*[@id='colorChange']")
+    public WebElement colorChangeButonu;
 
 }
