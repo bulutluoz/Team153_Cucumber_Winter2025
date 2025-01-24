@@ -8,3 +8,4 @@
       And birinci satirdaki bos olan ilk hucrenin indexini kaydeder
       Then birinci satirdaki bos olan ilk hucreye gunun tarihini kaydeder
       And her satirdaki urunu emag sitesinde aratir ve bulunan urunlerden ilkinin fiyatini kaydedilen index'deki sutuna yazar
+
